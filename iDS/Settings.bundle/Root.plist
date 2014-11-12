@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PreferenceSpecifiers</key>
+	<array>
+		<dict>
+			<key>Title</key>
+			<string>Common settings</string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+		</dict>
+		<dict>
+			<key>DefaultValue</key>
+			<true/>
+			<key>Key</key>
+			<string>enabled_preference</string>
+			<key>Title</key>
+			<string>Enable animation</string>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSMultiValueSpecifier</string>
+			<key>Title</key>
+			<string>touchesEnded timer</string>
+			<key>Key</key>
+			<string>timer_preference</string>
+			<key>DefaultValue</key>
+			<string>1.2</string>
+			<key>Titles</key>
+			<array>
+				<string>0.2 sec</string>
+				<string>0.5 sec</string>
+				<string>0.7 sec</string>
+				<string>0.9 sec</string>
+				<string>1.2 sec (recommended)</string>
+			</array>
+			<key>Values</key>
+			<array>
+				<string>0.2</string>
+				<string>0.5</string>
+				<string>0.7</string>
+				<string>0.9</string>
+				<string>1.2</string>
+			</array>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Server settings</string>
+		</dict>
+		<dict>
+			<key>AutocapitalizationType</key>
+			<string>None</string>
+			<key>AutocorrectionType</key>
+			<string>No</string>
+			<key>DefaultValue</key>
+			<string>http://oapi.ourduty.zz.mu/checkNewTasks.php</string>
+			<key>IsSecure</key>
+			<false/>
+			<key>Key</key>
+			<string>download_preference</string>
+			<key>KeyboardType</key>
+			<string>Alphabet</string>
+			<key>Title</key>
+			<string>Task server link</string>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+		</dict>
+		<dict>
+			<key>AutocapitalizationType</key>
+			<string>None</string>
+			<key>AutocorrectionType</key>
+			<string>No</string>
+			<key>DefaultValue</key>
+			<string>http://oapi.ourduty.zz.mu/updateBD.php</string>
+			<key>IsSecure</key>
+			<false/>
+			<key>Key</key>
+			<string>upload_preference</string>
+			<key>KeyboardType</key>
+			<string>Alphabet</string>
+			<key>Title</key>
+			<string>Upload server link</string>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+		</dict>
+	</array>
+	<key>StringsTable</key>
+	<string>Root</string>
+</dict>
+</plist>

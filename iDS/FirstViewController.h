@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AVFoundation/AVFoundation.h"
+#import <QuartzCore/QuartzCore.h>
+#import <MediaPlayer/MediaPlayer.h>
 
 @interface FirstViewController : UIViewController
-
-
+-(void) setType:(int)type;
 @end
 
