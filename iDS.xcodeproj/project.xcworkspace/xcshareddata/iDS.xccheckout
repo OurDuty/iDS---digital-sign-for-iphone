@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>D19130CE-1373-45F7-9C3C-86F692BE1D23</string>
+	<key>IDESourceControlProjectName</key>
+	<string>iDS</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>F99CD4F31809B84A166CEA8ECBC77DAE814A8425</key>
+		<string>https://github.com/OurDuty/iDS---digital-sign-for-iphone.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>iDS.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>F99CD4F31809B84A166CEA8ECBC77DAE814A8425</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/OurDuty/iDS---digital-sign-for-iphone.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>F99CD4F31809B84A166CEA8ECBC77DAE814A8425</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F99CD4F31809B84A166CEA8ECBC77DAE814A8425</string>
+			<key>IDESourceControlWCCName</key>
+			<string>iDS</string>
+		</dict>
+	</array>
+</dict>
+</plist>
