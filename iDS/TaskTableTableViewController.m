@@ -170,7 +170,6 @@ float expectedBytes;
         sqlite3_close(samplesBD);
     }
     
-    
     [self updateArray];
     [self.tableView reloadData];
 }
@@ -184,15 +183,18 @@ float expectedBytes;
     NSString *databasePath = [[NSString alloc] initWithString: [docsDir stringByAppendingPathComponent:  @"ids_database.db"]];
     
     const char *dbpath = [databasePath UTF8String];
-    
+    NSLog(@"Before1");
     if (sqlite3_open(dbpath, &samplesBD) == SQLITE_OK){
+        NSLog(@"Before2");
         NSString *sql = [NSString stringWithFormat:@"SELECT * FROM STATISTICS"];
         const char *query_stmt = [sql UTF8String];
         char *errMsg;
         sqlite3_stmt *statement;
         if (sqlite3_prepare_v2(samplesBD, query_stmt, -1, &statement, nil)==SQLITE_OK) {
+            NSLog(@"Before3");
+            BOOL m = true;
             while (sqlite3_step(statement)==SQLITE_ROW) {
-                
+                NSLog(@"Before4");
                 NSString *id_s = [[NSString alloc] initWithUTF8String:(const char *) sqlite3_column_text(statement, 0)];
                 
                 NSString *data = [[NSString alloc] initWithUTF8String:(const char *) sqlite3_column_text(statement, 1)];
@@ -206,6 +208,7 @@ float expectedBytes;
                 //NSLog(@"%@", uuidString);
                 NSString* params = [NSString stringWithFormat:@"vers=sig&user=ios-%@&type=%d&date=%@&stats=%@", uuidString, type, data, stats]; // задаем параметры POST запроса
                 NSURL* url = [NSURL URLWithString:[[NSUserDefaults standardUserDefaults]stringForKey: @"upload_preference"]]; // куда отправлять
+                NSLog(@"%@", [[NSUserDefaults standardUserDefaults]stringForKey: @"upload_preference"]);
                 NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:url];
                 request.HTTPMethod = @"POST";
                 request.HTTPBody = [params dataUsingEncoding:NSUTF8StringEncoding]; // следует обратить внимание на кодировку
@@ -213,7 +216,9 @@ float expectedBytes;
                 // теперь можно отправить запрос синхронно или асинхронно
                 NSData *server_answer = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
                 if(![[[NSString alloc] initWithData:server_answer encoding:NSUTF8StringEncoding]  isEqual:  @"0"]){
-                    //NSLog(@"error");
+                    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Try again later" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+                    [alert show];
+                    m = false;
                     break;
                 }
                 
@@ -239,6 +244,10 @@ float expectedBytes;
             }
             sqlite3_finalize(statement);
             sqlite3_close(samplesBD);
+            if(m){
+                UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Completed!" message:@"Uploading completed!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+                [alert show];
+            }
         }
     }
     //[self updateTable];

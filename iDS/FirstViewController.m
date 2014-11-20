@@ -135,7 +135,7 @@ int numOfStartedMoves = 0;
         const char *insert_stmt = [insertSQL UTF8String];
         sqlite3_prepare_v2(_samplesDB, insert_stmt,
                            -1, &statement, NULL);
-        if (_type && sqlite3_step(statement) == SQLITE_DONE)
+        if (sqlite3_step(statement) == SQLITE_DONE && _type)
         {
             
                 NSString *incrementSQL = [NSString stringWithFormat:
@@ -148,6 +148,7 @@ int numOfStartedMoves = 0;
                     //NSLog(@"Counter incremention failed!");
                 }
             _status = @"Success!";
+            
         } else {
             _status = @"Failed to add contact";
         }
